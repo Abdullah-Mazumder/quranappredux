@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+@font-face {
+  font-family: "hafezi";
+  src: url("./fonts/noorehuda.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "bn";
+  src: url("./fonts/LiAlinurPriyoshiANSIV1-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "arabic2";
+  src: url("./fonts/110_Besmellah_[Takmob.Net].TTF") format("truetype");
+}
+
+.arabicTxt {
+  font-family: "hafezi" !important;
+}
+
+.bnTxt {
+  font-family: "bn";
+}
