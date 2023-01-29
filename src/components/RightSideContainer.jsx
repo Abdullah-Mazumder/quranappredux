@@ -5,41 +5,26 @@ import RightSideTopSkeleton from "./RightSideTopSkeleton";
 import RightSideBottomSkeleton from "./RightSideBottomSkeleton";
 import { useState } from "react";
 import { Box, Button, CircularProgress, Tooltip, Zoom } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getTafsir } from "../store/actions/tafsirAction";
 
 const RenderHtml = ({ htmlString }) => {
   return <span dangerouslySetInnerHTML={{ __html: htmlString }} />;
 };
 
 const RightSideContainer = () => {
+  const dispatch = useDispatch();
   const { loading, fullSurah } = useSelector((state) => state.fullSurahDetails);
+  const { loadingTafsir, tafsir } = useSelector((state) => state.tafsir);
   const { arabicTextSize, banglaTextSize, englishTextSize } = useSelector(
     (state) => state.nobleQuran
   );
   const { surahDetails } = fullSurah;
   const [tafsirModarIsOpen, setTafsirModalIsOpen] = useState(false);
-  const [tafsir, setTafsir] = useState({
-    loading: true,
-    tafsir: "",
-  });
 
   const handleTafsirModal = (surahNumber, ayahNumber) => {
     setTafsirModalIsOpen(true);
-    setTafsir({
-      loading: true,
-      tafsir: "",
-    });
-
-    setTimeout(() => {
-      import(
-        `../data/tafsir/${surahNumber}/[${surahNumber}-${ayahNumber}].json`
-      ).then((data) => {
-        setTafsir({
-          loading: false,
-          tafsir: data[`${surahNumber}:${ayahNumber}`],
-        });
-      });
-    }, 0);
+    dispatch(getTafsir(surahNumber, ayahNumber));
   };
 
   return (
@@ -77,7 +62,7 @@ const RightSideContainer = () => {
               </Box>
             </div>
             <div className="content my-1 mb-2 !h-[60vh] !w-full overflow-y-auto overflow-x-hidden">
-              {tafsir.loading ? (
+              {loadingTafsir ? (
                 <>
                   <div className="w-full h-full flex items-center justify-center">
                     <Tooltip
@@ -102,7 +87,7 @@ const RightSideContainer = () => {
               ) : (
                 <>
                   <p className="leading-7">
-                    <RenderHtml htmlString={tafsir.tafsir} />
+                    <RenderHtml htmlString={tafsir} />
                   </p>
                 </>
               )}

@@ -3,11 +3,13 @@ import thunkMiddleware from "redux-thunk";
 import { fullSurahReducer } from "./reducers/fullSurahReducer";
 import { nobleQuranReducer } from "./reducers/nobleQuranReducer";
 import { shortSurahReducer } from "./reducers/shortSurahReducer";
+import { tafsirReducer } from "./reducers/tafsirReducer";
 
 const rootReducer = combineReducers({
   shortSurah: shortSurahReducer,
   fullSurahDetails: fullSurahReducer,
   nobleQuran: nobleQuranReducer,
+  tafsir: tafsirReducer,
 });
 
 const middleware = [thunkMiddleware];

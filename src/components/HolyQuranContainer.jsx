@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable eqeqeq */
 /* eslint-disable no-unused-vars */
-import { Alert, Slider, Switch, Tooltip, Zoom } from "@mui/material";
+import { Slider, Switch, Tooltip, Zoom } from "@mui/material";
 import TuneIcon from "@mui/icons-material/Tune";
 import CloseIcon from "@mui/icons-material/Close";
 import React, { useRef } from "react";
