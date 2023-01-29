@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBj5F84kqwfrE59xV8GAvJqgmqDeh7LRvQ",
-  authDomain: "quran-application-3cd79.firebaseapp.com",
-  projectId: "quran-application-3cd79",
-  storageBucket: "quran-application-3cd79.appspot.com",
-  messagingSenderId: "874986521044",
-  appId: "1:874986521044:web:3f33ec03626795c94f1641",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 export const firebaseApp = initializeApp(firebaseConfig);
