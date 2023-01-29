@@ -76,7 +76,7 @@ const RightSideContainer = () => {
                 তাফসীর ইবনে কাছীর
               </Box>
             </div>
-            <div className="content my-1 mb-2 !h-[60vh] !w-full overflow-y-auto">
+            <div className="content my-1 mb-2 !h-[60vh] !w-full overflow-y-auto overflow-x-hidden">
               {tafsir.loading ? (
                 <>
                   <div className="w-full h-full flex items-center justify-center">
