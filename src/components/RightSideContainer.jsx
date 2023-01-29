@@ -13,6 +13,9 @@ const RenderHtml = ({ htmlString }) => {
 
 const RightSideContainer = () => {
   const { loading, fullSurah } = useSelector((state) => state.fullSurahDetails);
+  const { arabicTextSize, banglaTextSize, englishTextSize } = useSelector(
+    (state) => state.nobleQuran
+  );
   const { surahDetails } = fullSurah;
   const [tafsirModarIsOpen, setTafsirModalIsOpen] = useState(false);
   const [tafsir, setTafsir] = useState({
@@ -54,7 +57,10 @@ const RightSideContainer = () => {
         <div className="h-[100%] w-[inherit]">
           {loading && <RightSideBottomSkeleton />}
           {!loading && (
-            <RightSideBottomContainer handleTafsirModal={handleTafsirModal} />
+            <RightSideBottomContainer
+              handleTafsirModal={handleTafsirModal}
+              key={arabicTextSize + banglaTextSize + englishTextSize}
+            />
           )}
         </div>
       </div>

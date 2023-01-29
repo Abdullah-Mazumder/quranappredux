@@ -261,9 +261,6 @@ const HolyQuranContainer = () => {
                   Text Size
                 </span>
               </div>
-              <Alert severity="success" className="bgSuccess">
-                You have to reload after changing the font size
-              </Alert>
               <div className="space-y-6">
                 <div className="flex items-center justify-between gap-8">
                   <p className="text-sm md:text-lg font-semibold">Arabic</p>

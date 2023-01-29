@@ -148,7 +148,7 @@ const Ayah = ({
                 <div className="button">
                   <Tooltip
                     TransitionComponent={Zoom}
-                    title="Play The Surah"
+                    title="Play The Ayah"
                     arrow={true}
                     placement="right"
                     classes={{
@@ -161,7 +161,6 @@ const Ayah = ({
                       size="large"
                       onClick={() => {
                         audioUrlHandler(audio);
-                        // setCurrentAyahPlaying(id);
                       }}
                     >
                       <PlayArrow fontSize="inherit" className="txtColor" />
@@ -172,7 +171,7 @@ const Ayah = ({
               {isPlaying && !isLoading && (
                 <Tooltip
                   TransitionComponent={Zoom}
-                  title="Pause The Surah"
+                  title="Pause The Ayah"
                   arrow={true}
                   placement="right"
                   classes={{
@@ -233,7 +232,7 @@ const Ayah = ({
                 </Tooltip>
               )}
             </div>
-            <div className="bottom flex justify-center mt-3">
+            <div className="">
               <Button
                 size="small"
                 variant="contained"
@@ -247,7 +246,7 @@ const Ayah = ({
             </div>
             <div className="relative">
               <IconButton
-                aria-label="delete"
+                aria-label="more"
                 size="large"
                 onClick={toggleTooltip}
               >

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable eqeqeq */
 import { useEffect, useRef } from "react";
 import Ayah from "./Ayah";
@@ -61,6 +62,7 @@ const RightSideBottomContainer = ({ handleTafsirModal }) => {
       ayahRef.current.scrollIntoView({ block: "end", behavior: "smooth" });
     }
   }, []);
+
   return (
     <>
       <div
