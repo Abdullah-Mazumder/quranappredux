@@ -86,7 +86,15 @@ const RightSideContainer = () => {
                 </>
               ) : (
                 <>
-                  <p className="leading-7">
+                  <p
+                    className="leading-7"
+                    style={{
+                      fontSize: banglaTextSize,
+                      lineHeight: `${
+                        banglaTextSize > 24 ? `${banglaTextSize}px` : "auto"
+                      }`,
+                    }}
+                  >
                     <RenderHtml htmlString={tafsir} />
                   </p>
                 </>

@@ -1,4 +1,5 @@
 /* eslint-disable eqeqeq */
+import convertToBanglaNumber from "engnumber-to-banglanumber";
 import {
   Box,
   Button,
@@ -43,6 +44,9 @@ const Ayah = ({
     page,
     is_sajdah_ayat,
     audio,
+    ruku,
+    juz,
+    manzil,
   } = ayah;
   const tooltipRef = useRef(null);
 
@@ -84,16 +88,114 @@ const Ayah = ({
               : "justify-center"
           } mb-2 h-[45px]`}
         >
-          <div className="flex gap-3 items-center justify-center text-center txtColor">
-            <Box component="span" className="divider pb-1">
-              Page: {page}
+          <div className="flex gap-1 lg:gap-3 items-center lg:justify-center text-center txtColor flex-wrap lg:flex-nowrap">
+            <Box component="span" className="">
+              <Tooltip
+                TransitionComponent={Zoom}
+                title={`Page - ${page}`}
+                arrow={true}
+                placement="top"
+                classes={{
+                  tooltip: "darkBgColor1",
+                  tooltipArrow: "darkBgColor1",
+                }}
+              >
+                <Button
+                  variant="outlined"
+                  classes={{
+                    root: "txtColor !pt-1 !border-slate-400",
+                    outlined: "!capitalize !font-normal !cursor-default",
+                  }}
+                  size="small"
+                >
+                  {`পৃষ্ঠা - ${convertToBanglaNumber(page.toString())}`}
+                </Button>
+              </Tooltip>
             </Box>
-            <Box component="span" className="divider pb-1">
-              Ayah: {id}
+            <Box component="span" className="">
+              <Tooltip
+                TransitionComponent={Zoom}
+                title={`Juz - ${juz}`}
+                arrow={true}
+                placement="top"
+                classes={{
+                  tooltip: "darkBgColor1",
+                  tooltipArrow: "darkBgColor1",
+                }}
+              >
+                <Button
+                  variant="outlined"
+                  classes={{
+                    root: "txtColor !pt-1 !border-slate-400",
+                    outlined: "!capitalize !font-normal !cursor-default",
+                  }}
+                  size="small"
+                >
+                  {`পারা - ${convertToBanglaNumber(juz.toString())}`}
+                </Button>
+              </Tooltip>
+            </Box>
+            <Box component="span" className="">
+              <Tooltip
+                TransitionComponent={Zoom}
+                title={`Ruku - ${ruku}`}
+                arrow={true}
+                placement="top"
+                classes={{
+                  tooltip: "darkBgColor1",
+                  tooltipArrow: "darkBgColor1",
+                }}
+              >
+                <Button
+                  variant="outlined"
+                  classes={{
+                    root: "txtColor !pt-1 !border-slate-400",
+                    outlined: "!capitalize !font-normal !cursor-default",
+                  }}
+                  size="small"
+                >
+                  {`রুকু - ${convertToBanglaNumber(juz.toString())}`}
+                </Button>
+              </Tooltip>
+            </Box>
+            <Box component="span" className="">
+              <Tooltip
+                TransitionComponent={Zoom}
+                title={`Manzil - ${manzil}`}
+                arrow={true}
+                placement="top"
+                classes={{
+                  tooltip: "darkBgColor1",
+                  tooltipArrow: "darkBgColor1",
+                }}
+              >
+                <Button
+                  variant="outlined"
+                  classes={{
+                    root: "txtColor !pt-1 !border-slate-400",
+                    outlined: "!capitalize !font-normal !cursor-default",
+                  }}
+                  size="small"
+                >
+                  {`মঞ্জিল - ${convertToBanglaNumber(juz.toString())}`}
+                </Button>
+              </Tooltip>
             </Box>
           </div>
           {readLater && readLater[surahNumber] == id && (
-            <Alert severity="success" className="bgSuccess">
+            <Alert
+              severity="success"
+              className="bgSuccess"
+              sx={{
+                fontSize: 10,
+                padding: "0px 10px",
+                display: "flex",
+                alignItems: "center",
+              }}
+              classes={{
+                message: "text-xs ml-[-5px]",
+              }}
+            >
               Saved Ayah
             </Alert>
           )}
@@ -126,6 +228,9 @@ const Ayah = ({
           }}
         >
           {bangl_text}
+          <span className="px-1 mx-2 border-2 border-slate-400 rounded-full">
+            {convertToBanglaNumber(id.toString())}
+          </span>
         </Box>
         <Box
           component="p"
@@ -138,6 +243,9 @@ const Ayah = ({
           }}
         >
           {english_text}
+          <span className="px-1 mx-2 border-2 border-slate-400 rounded-full">
+            {id}
+          </span>
         </Box>
 
         <Box component="div" className="mt-2">
@@ -237,7 +345,7 @@ const Ayah = ({
                 size="small"
                 variant="contained"
                 classes={{
-                  root: "bgColor1 txtColor hoverBg",
+                  root: "bgColor1 txtColor hoverBg !pt-2",
                 }}
                 onClick={() => handleTafsirModal(surahNumber, id)}
               >

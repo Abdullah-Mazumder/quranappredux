@@ -4809,6 +4809,11 @@ encoding@^0.1.12, encoding@^0.1.13:
   dependencies:
     iconv-lite "^0.6.2"
 
+engnumber-to-banglanumber@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/engnumber-to-banglanumber/-/engnumber-to-banglanumber-1.0.1.tgz#e36d309bf65f64bf2aa18ce4d8bdae2f8d17d571"
+  integrity sha512-QpbRA/eu0OJ6ymW/4qMMhW5XlrTbEMWgrCv+Y+61x2F4slh05jKP/W9zbtSf2A/syG40umjWVRp+N2re8eFdTg==
+
 enhanced-resolve@^5.10.0:
   version "5.12.0"
   resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-5.12.0.tgz#300e1c90228f5b570c4d35babf263f6da7155634"
