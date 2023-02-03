@@ -202,7 +202,7 @@ const Ayah = ({
         </Box>
 
         {is_sajdah_ayat && (
-          <Alert severity="warning" className="bgWarning my-1 mt-3">
+          <Alert severity="warning" className="bgWarning my-1 mt-3 enTxt">
             This is Sejdah Ayah ( এটা সিজদাহ আয়াত )
           </Alert>
         )}
@@ -234,7 +234,7 @@ const Ayah = ({
         </Box>
         <Box
           component="p"
-          className="txtColor text-left text-lg english py-3 divider"
+          className="txtColor text-left text-lg english py-3 divider enTxt"
           style={{
             fontSize: `${englishTextSize}px`,
             lineHeight: `${

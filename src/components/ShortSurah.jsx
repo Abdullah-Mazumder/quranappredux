@@ -42,10 +42,10 @@ const ShortSurah = ({
                   <span className="arabicTxt text-lg md:text-xl">
                     {arabicName}{" "}
                   </span>
-                  <span className="text-sm">( {banglaName} )</span>
+                  <span className="text-sm bnTxt">( {banglaName} )</span>
                 </Box>
               </div>
-              <Box style={{ marginTop: "-5px" }} className="">
+              <Box style={{ marginTop: "-5px" }} className="enTxt">
                 <span>{enTranslatedName} </span>
                 <span className="text-sm">( {englishName} )</span>
               </Box>
@@ -53,9 +53,9 @@ const ShortSurah = ({
             <div className="bottom flex gap-3 mt-1 text-xs md:text-sm">
               <Box component="span" className="">
                 <span className="arabicTxt">{arLocation} </span>
-                <span className="text-sm">( {enLocation} )</span>
+                <span className="text-sm enTxt">( {enLocation} )</span>
               </Box>
-              <Box component="span" className="">
+              <Box component="span" className="enTxt">
                 Ayah: {totalAyah}
               </Box>
             </div>

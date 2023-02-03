@@ -57,7 +57,7 @@ const RightSideContainer = () => {
         >
           <div className="dialog bgColor2 txtColor w-[280px] md:w-[500px] lg:w-[800px] min-h-[70vh] p-5 rounded-sm m-2 md:m-0">
             <div className="title divider mb-4">
-              <Box component={"p"} className="text-xl mb-1 font-semibold">
+              <Box component={"p"} className="text-xl mb-1 font-semibold bnTxt">
                 তাফসীর ইবনে কাছীর
               </Box>
             </div>
@@ -87,7 +87,7 @@ const RightSideContainer = () => {
               ) : (
                 <>
                   <p
-                    className="leading-7"
+                    className="leading-7 bnTxt"
                     style={{
                       fontSize: banglaTextSize,
                       lineHeight: `${

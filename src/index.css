@@ -13,8 +13,8 @@ body {
 }
 
 @font-face {
-  font-family: "bn";
-  src: url("./fonts/LiAlinurPriyoshiANSIV1-Italic.ttf") format("truetype");
+  font-family: "bn-en-font";
+  src: url("./fonts/HindSiliguri-Regular.ttf") format("truetype");
 }
 
 @font-face {
@@ -27,5 +27,9 @@ body {
 }
 
 .bnTxt {
-  font-family: "bn";
+  font-family: "bn-en-font";
+}
+
+.enTxt {
+  font-family: "bn-en-font";
 }
